@@ -1,0 +1,107 @@
+.containerWrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 30px;
+  width: 75%;
+  margin-top: 30px;
+  margin-right: 250px;
+}
+
+.container {
+  width: 100%;
+}
+
+.userInfo {
+  background: #f6f4f2;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.profileImage {
+  width: 120px;
+  border-radius: 10px;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.userData {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.fullName {
+  font-family: "doran";
+  font-size: 26px;
+}
+
+.mainSection {
+  display: flex;
+  gap: 20px;
+}
+
+.sideCards {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  min-width: 200px;
+}
+
+.socialCard {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  width: 350px;
+  background: #576086;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.socialCard h2 {
+  margin-bottom: 30px;
+  color: white;
+  font-family: "doran";
+  font-size: 28px;
+}
+
+.socialButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.socialButtons a {
+  width: 100%;
+  background: #fff;
+  padding: 8px 0;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.socialButtons a img {
+  margin-right: 10px;
+}
+
+.examGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  justify-content: space-between;
+  gap: 30px; 
+}

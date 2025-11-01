@@ -1,0 +1,135 @@
+.container {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ff0080, #7928ca, #2afadf, #ff0080);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 300% 300%;
+  animation: rainbow 5s linear infinite;
+  margin-bottom: 30px;
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.game {
+  position: relative;
+  width: 600px;
+  height: 200px;
+  background: #f8f8f8;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  cursor: pointer;
+}
+
+.dino {
+  position: absolute;
+  bottom: -10px;
+  left: 50px;
+  width: 70px;
+  height: 80px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.jump {
+  animation: jump 0.5s ease;
+}
+
+@keyframes jump {
+  0% {
+    bottom: -10px;
+  }
+  40% {
+    bottom: 80px;
+  }
+  60% {
+    bottom: 80px;
+  }
+  100% {
+    bottom: -10px;
+  }
+}
+
+.cactus {
+  position: absolute;
+  bottom: -10px;
+  right: -60px;
+  width: 40px;
+  height: 60px;
+  background: url("/img/cactus.png") no-repeat center / contain;
+}
+
+@keyframes moveCactus {
+  from {
+    right: -60px;
+  }
+  to {
+    right: 640px;
+  }
+}
+
+.score {
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.startButton,
+.restartButton {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #fff;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.startButton:hover,
+.restartButton:hover {
+  background: linear-gradient(135deg, #4338ca, #6d28d9);
+  transform: translateY(-2px);
+}
+
+.settings {
+  margin-bottom: 25px;
+}
+
+.label {
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.dropdown {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.preview {
+  margin-top: 10px;
+}
+
+.preview img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}

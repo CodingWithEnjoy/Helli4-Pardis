@@ -1,0 +1,73 @@
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  padding: 0 1rem;
+}
+
+.container h1 {
+  margin-bottom: 0.5rem;
+}
+
+.container h2 {
+  margin-top: 2rem;
+  border-bottom: 2px solid #ccc;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ccc;
+  padding: 0.4rem 0.6rem;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+  gap: 4px;
+  margin-top: 1rem;
+}
+
+.cell {
+  border: 1px solid #ddd;
+  text-align: center;
+  padding: 0.3rem;
+  background: #fafafa;
+  border-radius: 4px;
+}
+
+.cell.correct {
+  background: #c6f6c6;
+}
+
+.cell.wrong {
+  background: #f6c6c6;
+}
+
+.qnum {
+  font-size: 0.8rem;
+  color: #555;
+  display: block;
+}
+
+.ans {
+  font-weight: bold;
+}
+
+.center {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  margin-top: 2rem;
+}

@@ -1,0 +1,105 @@
+@font-face {
+  font-family: "estedad";
+  src: url("/font/estedad.ttf");
+}
+
+@font-face {
+  font-family: "doran";
+  src: url("/font/doran-extrabold.ttf");
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "estedad";
+  direction: rtl;
+}
+
+body {
+  width: 100%;
+  transition: 0.3s;
+}
+
+body.dark {
+  background: #1f2937;
+}
+
+a {
+  all: unset;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  background: #0070f3;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin-top: 6px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+h1,
+h2 {
+  margin: 0 0 10px;
+}
+
+.exam-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.exam-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: white;
+  padding: 15px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.exam-card:hover {
+  border-color: #0070f3;
+  background: #eef5ff;
+}
+
+.exam-card.selected {
+  border-color: #0070f3;
+  background: #ddecff;
+}
