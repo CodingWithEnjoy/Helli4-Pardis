@@ -1,27 +1,150 @@
 .pageWrapper {
   display: flex;
   height: 100vh;
+  background: #ffffff;
+  padding: 20px;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+}
+
+.blob {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  filter: blur(120px);
+  opacity: 0.6;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.blob1 {
+  background: #ff7eb6;
+  top: -100px;
+  left: -100px;
+}
+
+.blob2 {
+  background: #7cb8ff;
+  bottom: -150px;
+  left: 30%;
+}
+
+.blob3 {
+  background: #b18cff;
+  top: 20%;
+  right: -150px;
+}
+
+.formContainer,
+.imageSide {
+  position: relative;
+  z-index: 2;
+}
+
+.formContainer {
+  width: 60%;
+  display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #4f46e5, #3b82f6);
-  font-family: Arial, sans-serif;
+  padding: 50px;
 }
 
 .form {
-  width: 360px;
-  background: #fff;
+  width: 100%;
+  max-width: 800px;
   padding: 32px;
-  border-radius: 16px;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
   display: flex;
+  align-items: center;
   flex-direction: column;
   gap: 16px;
 }
 
+.imageSide {
+  width: 40%;
+  padding: 20px;
+  background: url("/img/login.jpg") center center no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+.imageSideDescription {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column; /* ✅ allows stacking quote + author */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 15px;
+  position: relative; /* ✅ needed for absolute author */
+}
+
+.quoteText {
+  font-weight: 600;
+  color: #ffffff;
+  padding: 0 20px;
+}
+
+.quoteAuthor {
+  position: absolute;
+  bottom: 8px; /* ✅ bottom-left placement */
+  left: 12px;
+  font-size: 14px;
+  color: #ffffff;
+  opacity: 0.9;
+}
+
+.logo {
+  filter: grayscale(1);
+}
+
 .title {
   text-align: center;
-  color: #1f2937;
-  margin-bottom: 8px;
+  color: #000000;
+  font-weight: 800;
+  font-size: 36px;
+  margin-top: -30px;
+}
+
+.description {
+  margin-top: -25px;
+  margin-bottom: 20px;
+  color: #323232;
+}
+
+.recentAccountsSection {
+  width: 50%;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.recentAccountsTitle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: #914dff;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.recentAccountsTitle span {
+  width: 35%;
+  height: 2px;
+  background: #914dff;
 }
 
 .recentAccounts {
@@ -31,37 +154,48 @@
 }
 
 .recentBtn {
-  padding: 4px 10px;
+  padding: 6px 12px;
   border-radius: 12px;
-  border: 1px solid #ccc;
-  background: #f3f4f6;
+  background: #eeeeee;
   cursor: pointer;
   font-size: 0.85rem;
-  transition: background 0.2s;
+  transition: background 0.3s;
+  color: #242424;
 }
 
 .recentBtn:hover {
-  background: #e0e7ff;
+  background: #d6d6d6;
 }
 
-.label {
-  display: flex;
-  flex-direction: column;
-  font-size: 0.95rem;
-  color: #374151;
+.inputGroup {
+  position: relative;
+  width: 50%;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #888;
+  pointer-events: none;
 }
 
 .input {
-  margin-top: 4px;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #d1d5db;
-  outline: none;
-  transition: border 0.2s;
+  width: 100%;
+  padding: 10px 10px 10px 40px;
+  border-radius: 12px;
+  border: none;
+  outline: 1px solid rgb(194, 194, 194);
+  transition: 0.2s;
+  font-size: 15px;
+  color: #374151;
 }
 
 .input:focus {
-  border: 1px solid #3b82f6;
+  box-shadow: 0 0 0 3px rgb(203, 161, 255);
+  outline-color: rgb(203, 161, 255);
 }
 
 .error {
@@ -70,20 +204,21 @@
 }
 
 .submitBtn {
-  padding: 12px;
-  border-radius: 10px;
-  background: #3b82f6;
+  width: 50%;
+  padding: 10px;
+  border-radius: 12px;
+  background: #914dff;
   color: #fff;
   font-weight: bold;
   cursor: pointer;
   border: none;
   font-size: 1rem;
   transition: background 0.2s, transform 0.2s;
+  margin-top: 20px;
 }
 
 .submitBtn:hover {
-  background: #2563eb;
-  transform: scale(1.03);
+  background: #8031ff;
 }
 
 .submitBtn:disabled {

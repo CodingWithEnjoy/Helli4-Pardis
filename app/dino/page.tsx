@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import styles from "./page.module.css";
+import { EmojiProvider, Emoji } from "react-apple-emojis";
+import emojiData from "react-apple-emojis/src/data.json";
 
 interface DinoOption {
   name: string;
@@ -106,11 +108,16 @@ export default function DinoPage() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>🦖 بازی داینو</h1>
+      <h1 className={styles.title}>
+        داینو 
+        <EmojiProvider data={emojiData}>
+          <Emoji className={styles.emoji} name="t-rex" width={32} />
+        </EmojiProvider>
+      </h1>
 
       {!isPlaying && (
         <div className={styles.settings}>
-          <label className={styles.label}>انتخاب داینو:</label>
+          <label className={styles.label}>انتخاب کاراکتر :</label>
           <select
             className={styles.dropdown}
             value={selectedDino.image}

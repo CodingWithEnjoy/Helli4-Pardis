@@ -1,15 +1,25 @@
 .containerWrapper {
-  padding: 40px;
-  max-width: 800px;
-  margin: 0 auto;
-  font-family: Arial, sans-serif;
+  padding: 50px 40px;
+  text-align: center;
+  margin-right: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
 }
 
 .title {
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+:global(body.dark) .title {
+  color: #fff;
 }
 
 .tabs {
@@ -20,27 +30,33 @@
 }
 
 .tabButton {
-  padding: 10px 20px;
-  border: 1px solid #ccc;
-  background-color: #f0f0f0;
-  border-radius: 8px;
+  padding: 10px 30px;
+  background-color: #f6b594;
+  border-radius: 15px;
   cursor: pointer;
   font-size: 16px;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
+  color: #000;
+  font-weight: 500;
 }
 
 .tabButton:hover {
-  background-color: #e6e6e6;
+  background-color: #f4d3b2;
 }
 
 .activeTab {
-  background-color: #0070f3;
-  color: white;
-  border-color: #0070f3;
+  background-color: #ff9e6e;
 }
 
 .examGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 20px;
+}
+
+.examGrid > * {
+  flex: 1 1 calc(35% - 20px); /* two per row accounting for gap */
+  max-width: calc(35% - 20px);
 }

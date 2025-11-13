@@ -1,8 +1,11 @@
 .containerWrapper {
+  padding: 50px 40px;
+  text-align: center;
+  margin-right: 220px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 40px;
+  justify-content: flex-start;
+  flex-direction: column;
 }
 
 .container {

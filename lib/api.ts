@@ -33,7 +33,7 @@ export async function getCookie(name: string, pass: string): Promise<string> {
     )}&pass=${encodeURIComponent(pass)}`
   );
   const data = await res.json();
-  if (!res.ok || !data.success) throw new Error(data.error || "Login failed");
+  if (!res.ok || !data.success) throw new Error("نام کاربری یا رمز عبور اشتباهه");
   return data.token;
 }
 

@@ -1,9 +1,11 @@
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 50px 20px;
+  padding: 50px 40px;
   text-align: center;
-  margin-right: 450px;
+  margin-right: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
 }
 
 .title {
@@ -23,21 +25,24 @@
 :global(body.dark) .title {
   color: #fff;
 }
-/* Masonry grid */
+
 .grid {
   column-count: 4;
   column-gap: 20px;
 }
+
 @media (max-width: 1024px) {
   .grid {
     column-count: 3;
   }
 }
+
 @media (max-width: 768px) {
   .grid {
     column-count: 2;
   }
 }
+
 @media (max-width: 480px) {
   .grid {
     column-count: 1;

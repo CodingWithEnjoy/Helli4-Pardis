@@ -5,11 +5,13 @@ import { useRouter } from "next/navigation";
 import { getExams } from "@/lib/api";
 import ExamCard from "@/components/ExamCard";
 import styles from "./page.module.css";
+import { EmojiProvider, Emoji } from "react-apple-emojis";
+import emojiData from "react-apple-emojis/src/data.json";
 
 interface Exam {
   eid: string;
   title: string;
-  date: string; // format: ۱۴۰۳/۰۹/۱۸
+  date: string;
 }
 
 export default function ExamsPage() {
@@ -36,7 +38,7 @@ export default function ExamsPage() {
           .sort((a, b) => {
             const da = persianDateToNumber(a.date);
             const db = persianDateToNumber(b.date);
-            return db - da; // latest first
+            return db - da;
           });
         setExams(sortedExams);
       })
@@ -48,11 +50,9 @@ export default function ExamsPage() {
     router.push(`/exams/${eid}`);
   };
 
-  // --- Utility: Convert Persian digits to English digits ---
   const toEnglishDigits = (str: string) =>
     str.replace(/[۰-۹]/g, (d) => String("۰۱۲۳۴۵۶۷۸۹".indexOf(d)));
 
-  // --- Convert Persian date (۱۴۰۳/۰۹/۱۸) → comparable number like 14030918 ---
   const persianDateToNumber = (persianDate: string) => {
     const eng = toEnglishDigits(persianDate);
     const parts = eng.split("/");
@@ -72,9 +72,13 @@ export default function ExamsPage() {
 
   return (
     <div className={styles.containerWrapper}>
-      <h1 className={styles.title}>آزمون‌ها</h1>
+      <h1 className={styles.title}>
+        آزمون ها
+        <EmojiProvider data={emojiData}>
+          <Emoji className={styles.emoji} name="cold-face" width={32} />
+        </EmojiProvider>
+      </h1>
 
-      {/* Tabs */}
       <div className={styles.tabs}>
         <button
           className={`${styles.tabButton} ${
