@@ -21,7 +21,7 @@ export interface ApiResponse<T> {
   error?: string;
 }
 
-const API_BASE = process.env.NEXT_PUBLIC_API_BASE || "https://helli4-pardis-backend.onrender.com/";
+const API_BASE = process.env.NEXT_PUBLIC_API_BASE || "https://helli4-pardis-backend.onrender.com";
 
 /**
  * 🔑 Get authentication cookie/token
